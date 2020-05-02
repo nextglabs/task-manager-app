@@ -6,10 +6,10 @@ const dbConfig = config.get('db');
 export const typeOrmConfig: TypeOrmModuleOptions = {
   entities: [__dirname + '/../**/*.entity.{js,ts}'],
   type: dbConfig.type,
-  host: process.env.RDS_HOSTNAME || dbConfig.host,
-  port: process.env.RDS_PORT || dbConfig.port,
-  username: process.env.RDS_USERNAME || dbConfig.username,
-  password: process.env.RDS_PASSWORD || dbConfig.password,
-  database: process.env.RDS_DB_NAME || dbConfig.database,
+  host: process.env.DATABASE_HOST || dbConfig.host,
+  port: process.env.DATABASE_PORT || dbConfig.port,
+  username: process.env.DATABASE_USERNAME || dbConfig.username,
+  password: process.env.DATABASE_PASSWORD || dbConfig.password,
+  database: process.env.DATABASE_NAME || dbConfig.database,
   synchronize: process.env.TYPEORM_SYNC || dbConfig.synchronize,
 };
